@@ -1,0 +1,218 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    /* Primary Maroons */
+    --color-maroon-deep: #6B1E2B;
+    --color-maroon-dark: #42121C;
+    --color-maroon-soft: #A85C68;
+    --color-maroon-glass: rgba(107, 30, 43, 0.08);
+    --color-maroon-subtle: rgba(107, 30, 43, 0.12);
+
+    /* Background Creams */
+    --color-cream-warm: #F3EBDD;
+    --color-cream-light: #FFF8EC;
+    --color-cream-deep: #E8DDCA;
+    --color-cream-glass: rgba(255, 248, 236, 0.65);
+    --color-white-glass: rgba(255, 255, 255, 0.45);
+    --color-glass-border: rgba(255, 255, 255, 0.60);
+
+    /* Typography & Neutral Colors */
+    --color-text-primary: #2B2020;
+    --color-text-secondary: #756565;
+    --color-text-muted: #9A8989;
+
+    /* Semantic Status */
+    --color-status-success: #5F8F68;
+    --color-status-warning: #C58A35;
+    --color-status-error: #B94A55;
+    --color-status-info: #6C8799;
+  }
+
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: #F3EBDD;
+    color: #2B2020;
+    font-weight: 400;
+  }
+
+  h1, h2, h3, h4, h5, h6, .font-heading {
+    font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 600;
+  }
+
+  button, .font-btn {
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+  }
+
+  .font-brand {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+  }
+
+  .font-space-grotesk {
+    font-family: 'Space Grotesk', sans-serif;
+  }
+
+  .font-inter {
+    font-family: 'Inter', sans-serif;
+  }
+
+  /* Custom terminal & code fonts */
+  .font-terminal {
+    font-family: 'JetBrains Mono', 'Fira Code', monospace;
+  }
+}
+
+/* Glassmorphism Reusable Component Utilities */
+.glass-card {
+  background: rgba(255, 248, 236, 0.65);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  border-radius: 20px;
+  box-shadow: 0 10px 30px -10px rgba(107, 30, 43, 0.07), 0 1px 3px 0 rgba(107, 30, 43, 0.04);
+}
+
+.glass-card-hover {
+  transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.2s ease;
+}
+
+.glass-card-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 36px -10px rgba(107, 30, 43, 0.12), 0 2px 6px 0 rgba(107, 30, 43, 0.06);
+  border-color: rgba(107, 30, 43, 0.25);
+}
+
+.glass-panel {
+  background: rgba(255, 248, 236, 0.50);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.55);
+}
+
+.glass-panel-dark {
+  background: rgba(66, 18, 28, 0.94);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 248, 236, 0.15);
+}
+
+.glass-pill {
+  background: rgba(255, 248, 236, 0.55);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(107, 30, 43, 0.12);
+}
+
+.glass-input {
+  background: rgba(255, 248, 236, 0.70);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(107, 30, 43, 0.15);
+  color: #2B2020;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
+}
+
+.glass-input:focus {
+  background: #FFF8EC;
+  border-color: #6B1E2B;
+  box-shadow: 0 0 0 3px rgba(107, 30, 43, 0.15);
+  outline: none;
+}
+
+.glass-btn-primary {
+  background-color: #6B1E2B;
+  color: #FFF8EC;
+  border-radius: 12px;
+  font-weight: 600;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 14px rgba(107, 30, 43, 0.25);
+}
+
+.glass-btn-primary:hover:not(:disabled) {
+  background-color: #42121C;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(107, 30, 43, 0.35);
+}
+
+.glass-btn-primary:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.glass-btn-secondary {
+  background: rgba(255, 248, 236, 0.70);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: #6B1E2B;
+  border: 1px solid rgba(107, 30, 43, 0.20);
+  border-radius: 12px;
+  font-weight: 600;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-btn-secondary:hover:not(:disabled) {
+  background: #FFF8EC;
+  border-color: rgba(107, 30, 43, 0.35);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(107, 30, 43, 0.10);
+}
+
+/* Draggable Dial Slider Styling */
+.dial-slider::-webkit-slider-thumb {
+  appearance: none;
+  height: 22px;
+  width: 22px;
+  border-radius: 50%;
+  background: #6B1E2B;
+  cursor: grab;
+  box-shadow: 0 2px 8px rgba(107, 30, 43, 0.4);
+  border: 2px solid #FFF8EC;
+  transition: transform 0.15s ease, background-color 0.15s ease;
+}
+
+.dial-slider::-webkit-slider-thumb:active {
+  cursor: grabbing;
+  transform: scale(1.15);
+  background: #42121C;
+}
+
+.dial-slider::-moz-range-thumb {
+  height: 22px;
+  width: 22px;
+  border-radius: 50%;
+  background: #6B1E2B;
+  cursor: grab;
+  box-shadow: 0 2px 8px rgba(107, 30, 43, 0.4);
+  border: 2px solid #FFF8EC;
+}
+
+/* Terminal Reel Cursor Animation */
+@keyframes terminalBlink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.animate-terminal-blink {
+  animation: terminalBlink 1s infinite;
+}
+
+/* Custom subtle warm scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #E8DDCA;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #A85C68;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #6B1E2B;
+}

@@ -1,0 +1,31 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        
+        
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Devora AI: Start Server (npm run dev)",
+            "runtimeExecutable": "npm",
+            "runtimeArgs": ["run", "dev"],
+            "cwd": "${workspaceFolder}/devoraA-main"
+        },
+        {
+            "type": "chrome",
+            "request": "launch",
+            "name": "Devora AI: Launch Chrome (localhost:3000)",
+            "url": "http://localhost:3000",
+            "webRoot": "${workspaceFolder}/devoraA-main"
+        }
+    ],
+    "compounds": [
+        {
+            "name": "Devora AI: Launch Full App (Server + Chrome)",
+            "configurations": [
+                "Devora AI: Start Server (npm run dev)",
+                "Devora AI: Launch Chrome (localhost:3000)"
+            ]
+        }
+    ]
+}
